@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yard Dash</title>
+    <meta name="theme-color" content="#ffd166" />
+    <meta
+      name="description"
+      content="A customizable dog yard-dash game where your dog tries to clear the neighborhood."
+    />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" href="assets/icon-192.png" />
+    <link rel="apple-touch-icon" href="assets/icon-192.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section class="setup-screen" id="setup-screen" aria-label="Dog setup">
+      <div class="setup-panel">
+        <h1>Set Up Your Dog</h1>
+        <label for="dog-name">Dog name</label>
+        <input id="dog-name" type="text" maxlength="18" value="Ziggy" />
+        <label for="dog-photo">Dog head shot</label>
+        <input id="dog-photo" type="file" accept="image/*" capture="environment" />
+        <div class="house-name-fields" aria-label="House names">
+          <label for="house-1">House 1</label>
+          <input id="house-1" class="house-name-input" type="text" maxlength="20" value="Wese's House" />
+          <label for="house-2">House 2</label>
+          <input id="house-2" class="house-name-input" type="text" maxlength="20" value="Alan's House" />
+          <label for="house-3">House 3</label>
+          <input id="house-3" class="house-name-input" type="text" maxlength="20" value="Surby's House" />
+          <label for="house-4">House 4</label>
+          <input id="house-4" class="house-name-input" type="text" maxlength="20" value="Black's House" />
+          <label for="house-5">House 5</label>
+          <input id="house-5" class="house-name-input" type="text" maxlength="20" value="House 5" />
+        </div>
+        <div class="setup-preview">
+          <img id="dog-preview" alt="Dog preview" src="assets/Z20.jpg" />
+        </div>
+        <div class="setup-actions">
+          <button id="save-setup" type="button">Save Setup</button>
+          <button id="default-setup" type="button">Use Ziggy</button>
+        </div>
+      </div>
+    </section>
+
+    <main class="game-shell">
+      <section class="hud" aria-label="Game status">
+        <div>
+          <span class="label">Dog</span>
+          <strong id="dog-label">Ziggy</strong>
+        </div>
+        <div>
+          <span class="label">Level</span>
+          <strong id="level">1</strong>
+        </div>
+        <div>
+          <span class="label">Stage</span>
+          <strong id="stage">Morning</strong>
+        </div>
+        <div>
+          <span class="label">Score</span>
+          <strong id="score">0</strong>
+        </div>
+        <div>
+          <span class="label">Time</span>
+          <strong id="time">60</strong>
+        </div>
+        <div>
+          <span class="label">Status</span>
+          <strong id="status">Sneaky</strong>
+        </div>
+        <button id="restart" type="button">Restart</button>
+        <button id="try-again" type="button">Try Again</button>
+        <button id="setup-button" type="button">Setup</button>
+        <button id="song" type="button">Sing Intro</button>
+      </section>
+
+      <canvas id="game" width="960" height="620" tabindex="0" aria-label="Yard Dash game board"></canvas>
+
+      <section class="controls" aria-label="Touch controls">
+        <div class="pad" aria-label="Move">
+          <button class="pad-btn up" data-hold="up" title="Up" type="button" aria-label="Up">^</button>
+          <button class="pad-btn left" data-hold="left" title="Left" type="button" aria-label="Left">&lt;</button>
+          <button class="pad-btn right" data-hold="right" title="Right" type="button" aria-label="Right">&gt;</button>
+          <button class="pad-btn down" data-hold="down" title="Down" type="button" aria-label="Down">v</button>
+        </div>
+        <button class="drop-btn" id="drop" title="Drop" type="button" aria-label="Drop">o</button>
+      </section>
+    </main>
+
+    <script src="app.js?v=pwa-package"></script>
+    <script src="pwa.js"></script>
+  </body>
+</html>
